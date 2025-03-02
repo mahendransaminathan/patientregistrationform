@@ -1,38 +1,215 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  color: gray;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+/* Custom styles for input */
+input {
+  color: gray;
+  background-color: #d3d3d3;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+/* Focused state for input */
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.prfname {
+  color: gray; /* Change text color */
+  background-color: #d3d3d3; /* Change background */
+  border: 1px solid #ccc; /* Add border */
+}
+
+.name-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr; /* Reduce label width to 80px */
+  
+  gap: 10px; /* Space between inputs */
+  width: 100%;
+  color: gray;
+}
+
+label[htmlFor="prn"] {
+  display: inline-block; /* Make label an inline-block so it can have width */
+  width: 50%; /* Set a fixed width */
+  margin-bottom: 5px; /* Space below the label */
+  font-weight: bold; /* Optional: Make the label bold */
+}
+
+.gender-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr; /* Reduce label width to 80px */
+  
+  gap: 10px; /* Space between inputs */
+  width: 100%;
+  color: gray;
+}
+
+.phone-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr; /* Reduce label width to 80px */
+  
+  gap: 10px; /* Space between inputs */
+  width: 100%;
+  color: gray;
+}
+
+.dob-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr; /* Reduce label width to 80px */
+  
+  gap: 10px; /* Space between inputs */
+  width: 100%;
+  color: gray;
+}
+
+.maritalstatus-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 1fr 1fr; /* Reduce label width to 80px */
+  
+  gap: 10px; /* Space between inputs */
+  width: 100%;
+  color: gray;
+}
+.maritalstatuscheckbox-group {
+  color: gray;
+  display: flex;
+  
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 25px; /* Adds space between checkbox and text */
+  font-size: 16px;
+}
+
+.maritalstatuscheckbox-group label {
+  display: flex;
+  align-items: center; /* Ensures text and checkbox are on the same line */
+  gap: 8px; /* Spacing between checkbox and text */
+  font-size: 16px;
+  cursor: pointer;
+}
+.address-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr; /* Reduce label width to 80px */
+  
+  gap: 10px; /* Space between inputs */
+  width: 100%;
+  color: gray;
+}
+
+
+.fulladdress-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Reduce label width to 80px */
+  
+  gap: 10px; /* Space between inputs */
+  width: 100%;
+  color: gray;
+  grid-column: 2 / 3; /* Make fulladdress-grid start in the second column */
+}
+
+.insurance-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr; /* Reduce label width to 80px */
+  
+  gap: 10px; /* Space between inputs */
+  width: 100%;
+  color: gray;
+}
+
+.medicalhistory-grid {
+  display: grid;
+  grid-template-columns: 150px 1fr; /* First column for label, second for checkboxes */
+  gap: 10px;
+  align-items: start;
+  width: 100%;
+}
+
+.medicalhistorycheckbox-group {
+  display: flex;
+  flex-direction: column; /* Ensures checkboxes are stacked vertically */
+  gap: 8px; /* Adds spacing between checkboxes */
+}
+
+
+
+/* Style the checkbox */
+input[type="checkbox"] {
+  appearance: none; /* Removes default styling */
+  width: 18px;
+  height: 18px;
+  background-color: #d3d3d3; /* Light gray */
+  border: 2px solid #a9a9a9; /* Darker gray border */
+  border-radius: 3px; /* Slightly rounded corners */
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+/* Change color when checkbox is checked */
+input[type="checkbox"]:checked {
+  background-color: #808080; /* Medium gray */
+  border-color: #696969;
+}
+
+/* Add a checkmark when checked */
+input[type="checkbox"]::before {
+  content: "✔"; /* Unicode checkmark */
+  font-size: 14px;
   color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
+/* Show checkmark when checked */
+input[type="checkbox"]:checked::before {
+  display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Styles for the button */
+button {
+  background-color: #000000;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
