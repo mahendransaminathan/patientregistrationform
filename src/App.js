@@ -78,7 +78,11 @@ function App() {
 
   return (
     <div className="container">
-      <h2 className="text-2xl font-bold mb-4">Patient Registration Form</h2>
+      <h2 className="prfheader">Patient Registration Form</h2>
+      <p className="prfparagraph">
+        Thank you for applying to our practices. Please complete this patient registration form with your information.and a doctor will contact you shortly.
+      </p>
+      <hr className="line" />
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Personal Information */}
         <div className="name-grid">
